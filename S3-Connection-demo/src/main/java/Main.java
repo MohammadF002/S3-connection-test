@@ -19,17 +19,14 @@ public class Main {
             .withCredentials(new AWSStaticCredentialsProvider(CREDENTIALS))
             .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://192.168.91.80:8080",
                                                                                   Regions.US_EAST_1.getName()))
+            .withPayloadSigningEnabled(true)
             .build();
 
 
     public static void main(String[] args) {
-        try {
-            S3_CLIENT.putObject(
-                    "bucket",
-                    "bigFile.txt",
-                    new File("C:\\Users\\pcadmin\\Desktop\\New folder\\bigFile.txt"));
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
-        }
+        S3_CLIENT.putObject(
+                "bucket",
+                "bigFile.txt",
+                new File("C:\\Users\\pcadmin\\Desktop\\New folder\\bigFile.txt"));
     }
 }
