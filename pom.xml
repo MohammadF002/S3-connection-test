@@ -11,8 +11,12 @@
     <groupId>com.example</groupId>
     <artifactId>S3_application_maven</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>S3_application_maven</name>
     <description>S3_application_maven</description>
+    <modules>
+        <module>S3-Connection-demo</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
         <aws.sdk.version>2.20.80</aws.sdk.version>
